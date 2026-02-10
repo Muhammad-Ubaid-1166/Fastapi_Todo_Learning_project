@@ -1,4 +1,4 @@
-from src.books.schemas import BookCreateModel
+from src.Todo.schemas import BookCreateModel
 
 books_prefix = "/api/v1/books"
 

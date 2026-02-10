@@ -14,7 +14,17 @@ class InvalidToken(BooklyException):
     """User has provided an invalid or expired token"""
 
     pass
+# errors.py (add this)
+from fastapi import HTTPException, status
 
+
+class TodoNotFound(HTTPException):
+    """Exception raised when a todo is not found"""
+    def __init__(self):
+        super().__init__(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Todo not found"
+        )
 
 class RevokedToken(BooklyException):
     """User has provided a token that has been revoked"""
